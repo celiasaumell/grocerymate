@@ -41,7 +41,7 @@ export default function Home() {
           data-visible={isOpen}
           className="relative flex flex-col space-y-5 bg-white p-10 text-center"
         >
-          <div className="flex w-full flex-row rounded-full border border-gray-400 bg-white/50 p-2 focus-within:border-2 focus-within:border-accent focus-within:transition-colors focus-within:duration-300 focus-within:ease-in-out">
+          <div className="flex w-full flex-row rounded-full border-2 border-gray-200 bg-white/50 p-2 transition duration-300 ease-in focus-within:border-accent focus-within:transition focus-within:duration-300 focus-within:ease-in">
             <input
               className="w-full px-2 focus:outline-none"
               placeholder="Find a recipe"
