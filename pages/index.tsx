@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -8,6 +8,7 @@ export default function Home() {
   const handleNav = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div>
       <Head>
@@ -16,34 +17,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="fixed z-50 w-full justify-between p-5">
+      <header className="z-50 flex w-full justify-between p-5">
         <h1
-          className={`${styles.title} text-4xl font-bold tracking-tight sm:text-6xl`}
+          className={`${styles.title}  w-1/2 text-5xl font-bold tracking-tight sm:text-6xl`}
         >
           <span className="text-primary">GROCERY</span>
           <span className="text-accent">MATE</span>
         </h1>
         <button
           onClick={handleNav}
-          className="absolute top-5 right-5 block sm:hidden"
+          className=" z-20 content-end sm:hidden"
           aria-controls="primary-navigation"
           aria-expanded={isOpen}
         >
-          <svg viewBox="0 0 100 80" width="40" height="40" fill="#453c38">
-            <rect width="100" height="15" rx="5"></rect>
-            <rect y="30" width="100" height="15" rx="5"></rect>
-            <rect y="60" width="100" height="15" rx="5"></rect>
+          <svg viewBox="0 0 100 80" width="20" height="20" fill="#453c38">
+            <rect width="100" height="20" rx="10"></rect>
+            <rect y="30" width="100" height="20" rx="10"></rect>
+            <rect y="60" width="100" height="20" rx="10"></rect>
           </svg>
           <span className="sr-only">Menu</span>
         </button>
         <nav
           id="primary-navigation"
           data-visible={isOpen}
-          className="relative flex flex-col space-y-5 bg-white p-10 text-center"
+          className="absolute top-0 right-0 bottom-0 left-1/2 z-0 flex flex-col space-y-8 bg-white px-5 py-20 text-center "
         >
           <div className="flex w-full flex-row rounded-full border-2 border-gray-200 bg-white/50 p-2 transition duration-300 ease-in focus-within:border-accent focus-within:transition focus-within:duration-300 focus-within:ease-in">
             <input
-              className="w-full px-2 focus:outline-none"
+              className="w-full px-2 placeholder:text-sm focus:outline-none"
               placeholder="Find a recipe"
               aria-label="Search"
             />
@@ -51,14 +52,13 @@ export default function Home() {
               <img className="" src="./magnifying-glass-svgrepo-com.svg"></img>
             </button>
           </div>
-
           <a>Browse All Recipes</a>
           <a>Sign Up</a>
           <a>Log in</a>
         </nav>
       </header>
 
-      <main className="absolute top-20">
+      <main className="">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt alias
         fuga commodi labore suscipit ipsum, nesciunt, nemo sint atque,
         accusantium unde. Aperiam, vel? Vero voluptas alias perferendis! Non,

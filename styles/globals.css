@@ -17,6 +17,7 @@
   --background: var(--clr-light);
 
   --ff: "Inter", sans-serif;
+  --hidden: scroll;
 }
 
 .darkmode {
@@ -35,12 +36,15 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  overflow-y: var(--hidden);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -51,11 +55,11 @@ a {
 }
 
 nav {
-  transform: translateY(-130%);
+  transform: translateX(110%);
   transition: transform 350ms ease-in;
 }
 nav[data-visible="true"] {
-  transform: translateY(10%);
+  transform: translateX(0%);
 }
 nav a {
   font-weight: bold;
