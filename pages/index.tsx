@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleNav = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
       <Head>
@@ -11,48 +16,96 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="min-content fixed w-full px-5 py-10 sm:px-32">
-        <nav className="flex flex-row items-center justify-between ">
-          <h1
-            className={`${styles.title} text-4xl font-bold tracking-tight sm:text-6xl`}
-          >
-            <span className="text-primary">GROCERY</span>
-            <span className="text-accent">MATE</span>
-          </h1>
-          <button>
-            <svg viewBox="0 0 100 80" width="40" height="40" fill="#453c38">
-              <rect width="100" height="15" rx="5"></rect>
-              <rect y="30" width="100" height="15" rx="5"></rect>
-              <rect y="60" width="100" height="15" rx="5"></rect>
-            </svg>
-          </button>
-          {/* <div className="min-w-[600px] space-x-10">
+      <header className="fixed z-50 w-full justify-between p-5">
+        <h1
+          className={`${styles.title} text-4xl font-bold tracking-tight sm:text-6xl`}
+        >
+          <span className="text-primary">GROCERY</span>
+          <span className="text-accent">MATE</span>
+        </h1>
+        <button
+          onClick={handleNav}
+          className="absolute top-5 right-5 block sm:hidden"
+          aria-controls="primary-navigation"
+          aria-expanded={isOpen}
+        >
+          <svg viewBox="0 0 100 80" width="40" height="40" fill="#453c38">
+            <rect width="100" height="15" rx="5"></rect>
+            <rect y="30" width="100" height="15" rx="5"></rect>
+            <rect y="60" width="100" height="15" rx="5"></rect>
+          </svg>
+          <span className="sr-only">Menu</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          data-visible={isOpen}
+          className="relative flex flex-col space-y-5 bg-white p-10 text-center"
+        >
+          <div className="flex w-full flex-row rounded-full border border-gray-400 bg-white/50 p-2 focus-within:border-2 focus-within:border-accent focus-within:transition-colors focus-within:duration-300 focus-within:ease-in-out">
             <input
-              className="rounded-full border border-gray-400 bg-white/50 p-2 shadow-lg"
+              className="w-full px-2 focus:outline-none"
               placeholder="Find a recipe"
+              aria-label="Search"
             />
-            <a>Browse Recipes</a>
-            <a>Sign up</a>
-            <a>Log in</a>
-          </div> */}
+            <button className="h-[20px] min-w-[20px] self-center pr-2 focus:outline-none">
+              <img className="" src="./magnifying-glass-svgrepo-com.svg"></img>
+            </button>
+          </div>
+
+          <a>Browse All Recipes</a>
+          <a>Sign Up</a>
+          <a>Log in</a>
         </nav>
       </header>
 
-      <main className="w-full">
-        <div className="grid justify-between sm:grid-cols-2">
-          <div className="self-center pl-32">
-            <h1 className="font-bold text-primary sm:text-7xl">
-              Automate your online grocery shopping experience
-            </h1>
-            <p>
-              Choose your recipes for the week and add the ingredients to your
-              Kroger cart in one click
-            </p>
-            <button>Browse 1000+ Recipes</button>
-            <button>Create Your Own Recipe</button>
-          </div>
-          <img className="" src="./brooke-lark-RrzeCGujVfU-unsplash.jpg" />
-        </div>
+      <main className="absolute top-20">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt alias
+        fuga commodi labore suscipit ipsum, nesciunt, nemo sint atque,
+        accusantium unde. Aperiam, vel? Vero voluptas alias perferendis! Non,
+        quaerat provident! Ex molestias dolorem enim eum perferendis obcaecati
+        quis, sed quasi in. Molestiae provident eligendi, placeat ipsa,
+        perspiciatis laboriosam aut illo cum possimus eveniet deserunt delectus
+        optio sed quod voluptate corporis. Sequi dignissimos soluta, ea
+        temporibus minus laborum eum id aliquid fugiat, eos repellendus? Quidem
+        necessitatibus, quaerat rerum error reiciendis architecto magnam optio
+        nostrum delectus explicabo earum cum quod maxime autem? Ipsam ullam sint
+        id voluptas exercitationem cupiditate possimus rerum facilis aspernatur
+        officia libero, voluptate repellendus dolor architecto, labore dolore
+        assumenda numquam inventore ipsum corrupti tempore qui quaerat! Tenetur,
+        voluptate veritatis! Eligendi, praesentium. Voluptatum fugit harum
+        perferendis exercitationem hic magni ducimus tempora consequatur sunt
+        libero iusto excepturi, debitis quia ut tenetur dolores? Nam, velit illo
+        quam dolorem iusto iure incidunt quisquam! Reiciendis, nemo aspernatur
+        adipisci quo aperiam error nam dolorem neque eligendi corrupti
+        voluptatem suscipit tempora rem, quod sed. Voluptates hic similique quae
+        aspernatur labore amet sunt assumenda dolor dignissimos quas. Sapiente
+        nostrum ut exercitationem aspernatur deleniti commodi dolore praesentium
+        recusandae ex magnam ullam maxime consectetur minima blanditiis
+        obcaecati, reiciendis aut fugiat error dolor earum quo fuga. Molestiae
+        atque dolorem sequi! Ad quaerat iste, accusamus expedita ducimus cumque
+        similique, consectetur optio incidunt ipsam libero, voluptatem sit atque
+        voluptatum qui! Amet reprehenderit nulla molestiae odit, impedit modi
+        voluptate expedita ipsa quas quo? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Facilis nesciunt enim non officia ducimus rerum
+        accusamus distinctio in nisi quibusdam, quam dolorem aspernatur
+        reiciendis et alias, omnis ipsam? Ratione, tenetur. Necessitatibus dolor
+        doloremque dignissimos! Veniam alias fugit odio reprehenderit accusamus
+        sapiente consequuntur cupiditate, blanditiis, eaque est excepturi quae!
+        Laborum unde vero accusamus similique pariatur laboriosam illo aliquam
+        iste perferendis eveniet! Porro doloremque ullam vitae dolore at atque
+        commodi iusto iure minima, molestias vero qui voluptate sed possimus
+        quos nulla quasi pariatur beatae nobis laborum, labore error placeat
+        repellat dolorem. Aperiam. Tenetur quos ad commodi velit doloremque,
+        sunt nisi amet vitae sapiente veritatis neque id tempore quod vero,
+        pariatur ipsam omnis mollitia fugiat quaerat voluptates recusandae
+        dolore! Harum quidem consequatur expedita. Qui officiis delectus hic
+        expedita voluptates deserunt corrupti sit consequuntur, impedit optio,
+        quae magnam dolorum minus magni! Eveniet ipsam magni excepturi accusamus
+        suscipit vero et nostrum, numquam laboriosam enim pariatur. Qui dolores
+        corrupti corporis aut commodi aliquid maiores quae accusamus. Sit,
+        provident! Eligendi perspiciatis eveniet tempora magnam obcaecati
+        molestias consectetur qui perferendis dolore, libero voluptates, rem
+        voluptatum, quisquam aut explicabo!
       </main>
 
       <footer className={styles.footer}></footer>

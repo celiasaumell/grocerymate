@@ -50,6 +50,13 @@ a {
   box-sizing: border-box;
 }
 
+nav {
+  transform: translateY(-130%);
+  transition: transform 350ms ease-in;
+}
+nav[data-visible="true"] {
+  transform: translateY(10%);
+}
 nav a {
   font-weight: bold;
 }
